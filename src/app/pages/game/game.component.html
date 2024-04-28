@@ -1,1 +1,18 @@
-<p>game works!</p>
+<div class="container">
+    <div class="header-container">
+        <div class="title">SupaCoolaPuzzleGame</div>
+    </div>
+    <div class="main-container">
+        <div class="puzzle-container">puzzleContainer</div>
+        <div class="menu-container">
+            <div class="buttons-container">
+                <div class="menu-buttons"><button>button1</button><button>button2</button><button>button3</button></div>
+            </div>
+            <div class="selection-container">
+                <div *ngFor="let number of numbers" class="box">
+                    <span>{{ number }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

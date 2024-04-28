@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 90vh; 
+    width: 90vw; 
+    margin: 0;
+    padding: 0;
+    background-color: #1b1b1b;
+    color: #ddd;
+}
+
+.header-container{
+    border: 1px solid red;
+    height: 5vw;
+}
+
+.title{
+    color:red
+}
+
+.main-container {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.puzzle-container {
+    border: 1px solid orange;
+    width: 60%;
+}
+
+.menu-container {
+    border: 1px solid orange;
+    width: 40%;
+}
+
+.buttons-container {
+    border: 1px solid plum;
+    height: 30%;
+}
+
+.menu-buttons {
+    color: blue;
+}
+
+.selection-container {
+    border: 1px solid plum;
+    height: 70%;
+}
