@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,6 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './simple-math.component.scss'
 })
 export class SimpleMathComponent {
+  @Input() question: string | undefined;
   answer: number = 0;
 
   checkAnswer(): void {
