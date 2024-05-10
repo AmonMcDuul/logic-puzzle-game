@@ -1,0 +1,8 @@
+<div class="game-container">
+    <div class="moving-word" [style.transform]="'translateX(' + wordPosition + 'px)'">
+        {{ currentWord }}
+    </div>
+    <div class="barrier" [style.left]="barrierPosition + 'px'"></div>
+    <input type="text" [(ngModel)]="userInput" (keyup)="checkInput()">
+    <div class="score">Score: {{ score }}</div>
+</div>

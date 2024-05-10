@@ -1,0 +1,33 @@
+.game-container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    color: black;
+  }
+  
+  .moving-word {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .barrier {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+  }
+  
+  .score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }

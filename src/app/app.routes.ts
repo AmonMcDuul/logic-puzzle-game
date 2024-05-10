@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { GameComponent } from './pages/game/game.component';
-import { SimpleMathComponent } from './components/simple-math/simple-math.component';
+import { TypingGameComponent } from './components/typing-game/typing-game.component';
 
 export const routes: Routes = [  
     {
@@ -12,11 +12,11 @@ export const routes: Routes = [
   {
     path: 'game',
     component: GameComponent,
-    title: 'Game',
+    title: 'game',
   },
   {
   path: 'test',
-  component: SimpleMathComponent,
+  component: TypingGameComponent,
   title: 'text',
   },
 ];

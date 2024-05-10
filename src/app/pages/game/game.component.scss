@@ -5,8 +5,8 @@
     width: 90vw; 
     margin: 0;
     padding: 0;
-    background-color: #1b1b1b;
-    color: #ddd;
+    background-color: #dbd06f;
+    color: #000000;
 }
 
 .header-container{
@@ -26,54 +26,6 @@
     letter-spacing: 2px;
 }
 
-.main-container {
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}
 .puzzle-container {
-    border: 1px solid orange;
-    width: 60%;
-}
-
-.menu-container {
-    border: 1px solid orange;
-    width: 40%;
-}
-
-.buttons-container {
-    border: 1px solid plum;
-    height: 30%;
-}
-
-.menu-buttons {
-    color: blue;
-}
-
-.selection-container {
-    height: 70%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-around;
-}
-
-.levelButton {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4d0303;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.levelButton:hover {
-    background-color: #0056b3;
+    width: 100%;
 }

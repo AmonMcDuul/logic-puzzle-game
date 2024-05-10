@@ -1,8 +1,19 @@
-<h1>Level x</h1>
-<hr>
-<div class="puzzle-question">
-    <p>What is the missing number?</p>
-    <p>3 -5 - ... - 13</p>
-    <input type="number" [(ngModel)]="answer">
-    <button (click)="checkAnswer()" class="check-button">Submit</button>
+<div class="simple-math-container">
+    <h1>Level {{ level }}</h1>
+    <hr>
+    <div class="puzzle-question">
+        <div class="question">
+            <p>{{ question }}</p>
+        </div>
+        <div class="keyboard-container">
+            <input type="text" [(ngModel)]="answer" readonly>
+            <div class="keyboard">
+                @for(digit of keypadDigits; track digit){
+                <button class="key" (click)="addToAnswer(digit)">{{ digit }}</button>
+                }
+            </div>
+        </div>
+        <button (click)="checkAnswer()" class="check-button">Submit</button>
+        <button class="key X" (click)="clearAnswer()">X</button>
+    </div>
 </div>
