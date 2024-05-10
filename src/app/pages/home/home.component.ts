@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   constructor(private router: Router) {}
   
-  newGame() {
-    this.router.navigate(['/game']);
+  newGame(gameType: string) {
+    this.router.navigate(['/game', { type: gameType }]);
   }
 }

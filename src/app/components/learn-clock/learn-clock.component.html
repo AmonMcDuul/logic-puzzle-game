@@ -1,0 +1,13 @@
+<div class="clock">
+    <div class="hour-hand" [style.transform]="'rotate(' + (hours * 30 + minutes / 2) + 'deg)'"></div>
+    <div class="minute-hand" [style.transform]="'rotate(' + (minutes * 6) + 'deg)'"></div>
+</div>
+
+<div class="time-options">
+    <button *ngFor="let option of timeOptions" [ngClass]="{'selected': option === selectedTimeOption}"
+        (click)="changeTimeOption(option)">
+        {{ option }}
+    </button>
+</div>
+
+<div class="current-time">{{ currentTime }}</div>

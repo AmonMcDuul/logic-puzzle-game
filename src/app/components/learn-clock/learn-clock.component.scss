@@ -1,0 +1,48 @@
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 20px auto;
+  }
+  
+  .hour-hand, .minute-hand {
+    position: absolute;
+    background-color: blue; /* Change color as needed */
+    transform-origin: 50% 100%;
+  }
+  
+  .hour-hand {
+    width: 4px;
+    height: 60px;
+  }
+  
+  .minute-hand {
+    width: 2px;
+    height: 80px;
+  }
+  
+  .time-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .time-options button {
+    background-color: #f0f0f0;
+    border: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .time-options button.selected {
+    background-color: #4caf50;
+  }
+  
+  .current-time {
+    text-align: center;
+    font-size: 20px;
+  }
+  

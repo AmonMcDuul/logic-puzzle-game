@@ -3,8 +3,7 @@
     <hr>
     <div class="puzzle-question">
         <div class="question">
-            <p>{{ question }}</p>
-        </div>
+            {{ question }} </div>
         <div class="keyboard-container">
             <input type="text" [(ngModel)]="answer" readonly>
             <div class="keyboard">
@@ -16,4 +15,13 @@
         <button (click)="checkAnswer()" class="check-button">Submit</button>
         <button class="key X" (click)="clearAnswer()">X</button>
     </div>
+    <div>
+        @for(operator of operators; track operator){
+        <button class="operator-button" [ngClass]="{'selected': isOperatorSelected(operator)}"
+            (click)="toggleOperator(operator)">
+            {{ operator }}
+        </button>
+        }
+    </div>
+
 </div>

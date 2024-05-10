@@ -1,14 +1,21 @@
 <div class="container">
     <div class="header-container">
-        <div class="title">SupaCoolaPuzzleGame</div>
+        <a href="/" class="title">SupaCoolaPuzzleGame</a>
         <div class="timer">
             <app-timer></app-timer>
         </div>
     </div>
     <div class="main-container">
         <div class="puzzle-container">
+            @if(gameType == 'simple-math'){
             <app-simple-math></app-simple-math>
-            <!-- <app-typing-game></app-typing-game> -->
+            }
+            @if(gameType == 'typing-game'){
+            <app-typing-game></app-typing-game>
+            }
+            @if(gameType == 'learn-clock'){
+            <app-learn-clock></app-learn-clock>
+            }
         </div>
     </div>
 </div>

@@ -1,19 +1,14 @@
-// @font-face {
-//     font-family: 'MajorMonoDisplay';
-//     src: url('../src/assets/fonts/MajorMonoDisplay-Regular.ttf');
-//   }
+@font-face {
+    font-family: 'KodeMono';
+    src: url('../src/assets/fonts/KodeMono-VariableFont_wght.ttf');
+  }
 
-//   @font-face {
-//     font-family: 'KodeMono';
-//     src: url('../src/assets/fonts/KodeMono-VariableFont_wght.ttf');
-//   }
- 
 html{
     background-color: rgb(71, 119, 207);
 }
 
 body {
-    // font-family: 'KodeMono', monospace;
+    font-family: 'KodeMono', monospace;
     color: rgb(71, 119, 207);
     margin:  0px;
     height:  100vh;

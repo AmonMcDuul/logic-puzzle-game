@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WordsService } from './words.service';
 
@@ -11,28 +11,40 @@ import { WordsService } from './words.service';
   styleUrl: './typing-game.component.scss'
 })
 export class TypingGameComponent {
-  currentWord: string = "";
+  currentWord: string = '';
   wordPosition: number = 300;
-  barrierPosition: number = 100;
-  userInput: string = "";
+  barrierPosition: number = 0;
+  userInput: string = '';
   score: number = 0;
-  words: string[] = ['hello', 'world', 'angular', 'typing', 'game'];
+  highscore: number = 0;
+  currentLetterIndex: number = 0;
 
-  constructor(private wordsService: WordsService) { }
+  constructor(private wordsService: WordsService) {}
 
   ngOnInit(): void {
-    this.currentWord = this.wordsService.getRandomWord();
-    this.wordPosition = 300;
-    this.barrierPosition = 100;
-    this.score = 0;
+    this.newGame();
   }
 
-  checkInput(): void {
-    if (this.userInput === this.currentWord) {
-      this.score++;
-      this.userInput = '';
-      this.currentWord = this.wordsService.getRandomWord();
-      this.wordPosition = 300;
+  newGame(): void {
+    this.currentWord = this.wordsService.getRandomWord();
+    this.wordPosition = 400;
+    this.barrierPosition = 0;
+    this.currentLetterIndex = 0;
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    const keyPressed = event.key;
+    const currentLetter = this.currentWord[this.currentLetterIndex];
+    if (keyPressed === currentLetter) {
+      this.currentLetterIndex++;
+      if (this.currentLetterIndex >= this.currentWord.length) {
+        this.score++;
+        if(this.score > this.highscore){
+          this.highscore = this.score;
+        }
+        this.newGame();
+      }
     }
   }
 
@@ -40,9 +52,17 @@ export class TypingGameComponent {
     this.wordPosition -= 2; 
     if (this.wordPosition <= this.barrierPosition) {
       this.score = 0;
-      this.wordPosition = 300;
-      this.currentWord = this.wordsService.getRandomWord();
+      this.currentLetterIndex = 0;
+      this.newGame();
     }
+  }
+
+  isLetterGuessed(index: number): boolean {
+    return index < this.currentLetterIndex;
+  }
+
+  get currentWordArray(): string[] {
+    return Array.from(this.currentWord);
   }
 
   ngAfterViewInit(): void {
