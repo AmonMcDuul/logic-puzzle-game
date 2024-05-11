@@ -18,14 +18,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: aquamarine;
-    // color:gold;
     color: rgb(51, 97, 82);
     background-color:gold;
   }
   
 .cell:hover {
-    background-color: #f0f0f0; /* Highlight cell on hover */
+    background-color: #81D4FA; /* Highlight cell on hover */
   }
 
   .score {
