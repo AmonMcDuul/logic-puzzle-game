@@ -13,7 +13,8 @@
 
 .question {
   text-align: center;
-  font-size: 28px;
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -91,11 +92,16 @@ input[type="text"] {
 }
 
 .operator-button {
+  font-size: 24px;
   background-color: #f0f0f0; /* Neutral color */
   border: none;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.operator-button:hover {
+  background-color: #e5e5e5;
 }
 
 .operator-button.selected {

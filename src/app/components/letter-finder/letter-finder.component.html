@@ -1,0 +1,10 @@
+<div class="game-container">
+    <div class="score">Score: {{ score }}</div>
+    <div class="grid">
+        <div *ngFor="let row of grid; let i = index" class="row">
+            <div *ngFor="let symbol of row; let j = index" class="cell" (click)="selectSymbol(i, j)">
+                {{ symbol }}
+            </div>
+        </div>
+    </div>
+</div>

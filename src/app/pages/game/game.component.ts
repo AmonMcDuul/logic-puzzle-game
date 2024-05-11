@@ -5,13 +5,14 @@ import { TimerComponent } from "../../components/timer/timer.component";
 import { TypingGameComponent } from "../../components/typing-game/typing-game.component";
 import { ActivatedRoute } from '@angular/router';
 import { LearnClockComponent } from "../../components/learn-clock/learn-clock.component";
+import { LetterFinderComponent } from "../../components/letter-finder/letter-finder.component";
 
 @Component({
     selector: 'app-game',
     standalone: true,
     templateUrl: './game.component.html',
     styleUrl: './game.component.scss',
-    imports: [CommonModule, SimpleMathComponent, TimerComponent, TypingGameComponent, LearnClockComponent]
+    imports: [CommonModule, SimpleMathComponent, TimerComponent, TypingGameComponent, LearnClockComponent, LetterFinderComponent]
 })
 export class GameComponent {
     gameType: string = "";;

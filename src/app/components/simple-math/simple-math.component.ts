@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./simple-math.component.scss']
 })
 export class SimpleMathComponent {
-  level: number = 1;
+  score: number = 1;
   question: string = '';
   result: number = 0;
   answer: string = '';
@@ -34,13 +34,11 @@ export class SimpleMathComponent {
 
   checkAnswer(): void {
     if (parseInt(this.answer, 10) === this.result) {
-      alert('Correct!');
-      this.level++;
+      this.score++;
       this.answer = "";
       this.generateQuestion();
-    } else {
-      alert('Incorrect. Try again.');
     }
+    this.answer = "";
   }
 
   generateQuestion(): void {
@@ -94,5 +92,10 @@ export class SimpleMathComponent {
 
   isOperatorSelected(operator: string): boolean {
     return this.selectedOperators.includes(operator);
+  }
+
+  skipLevel(){
+    this.answer = "";
+    this.generateQuestion();
   }
 }
