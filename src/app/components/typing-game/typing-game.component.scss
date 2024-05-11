@@ -2,7 +2,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: rgb(212, 98, 212);
+      color: rgb(255, 0, 255);
   }
 
   .moving-word {
@@ -23,6 +23,8 @@
     width: 2px;
     height: 100px;
     background-color: red;
+    animation: lightning 0.1s ease-in-out infinite; /* Adjust duration and timing function */
+
   }
   
   .score {
@@ -35,4 +37,22 @@
     margin-top: 20px;
     font-size: 42px;
     font-weight: bold;
+  }
+
+
+  @keyframes lightning {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+      background-color:#FFFF00;
+      width: 6px;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
   }

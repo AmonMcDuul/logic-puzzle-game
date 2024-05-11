@@ -1,4 +1,19 @@
-<button class="menu-buttons" (click)="newGame('simple-math')">Rekenen</button>
-<button class="menu-buttons" (click)="newGame('typing-game')">Typen</button>
-<button class="menu-buttons" (click)="newGame('learn-clock')">Klok lezen</button>
-<button class="menu-buttons" (click)="newGame('letter-finder')">Letters vinden</button>
+<div class="home-container">
+    <div class="title" id="title">
+        <h1>Het SpellenParadijs</h1>
+    </div>
+    <div class="buttons">
+        <button class="menu-buttons" (click)="newGame('simple-math')">
+            <span>Rekenen</span>
+        </button>
+        <button class="menu-buttons" (click)="newGame('typing-game')">
+            <span>Typen</span>
+        </button>
+        <button class="menu-buttons" (click)="newGame('learn-clock')">
+            <span>Klok lezen</span>
+        </button>
+        <button class="menu-buttons" (click)="newGame('letter-finder')">
+            <span>Letters vinden</span>
+        </button>
+    </div>
+</div>

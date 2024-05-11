@@ -48,6 +48,7 @@ npx angular-cli-ghpages --dir=docs/browser
 
 ##
 
+--(titel)letters laten draaien etc?
 Memory
 Frozen spel
 Gewoon typen

@@ -3,17 +3,20 @@
     <hr>
     <div class="puzzle-question">
         <div class="question">
-            {{ question }} </div>
+            {{ question }}
+            <input type="text" class="input-text" [(ngModel)]="answer" readonly>
+        </div>
         <div class="keyboard-container">
-            <input type="text" [(ngModel)]="answer" readonly>
+            <div class="submit-buttons">
+                <button (click)="checkAnswer()" class="check-button">Submit</button>
+                <button class="key X" (click)="clearAnswer()">X</button>
+            </div>
             <div class="keyboard">
                 @for(digit of keypadDigits; track digit){
                 <button class="key" (click)="addToAnswer(digit)">{{ digit }}</button>
                 }
             </div>
         </div>
-        <button (click)="checkAnswer()" class="check-button">Submit</button>
-        <button class="key X" (click)="clearAnswer()">X</button>
     </div>
     <div>
         @for(operator of operators; track operator){

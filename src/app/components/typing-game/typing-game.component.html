@@ -4,6 +4,6 @@
     <div class="barrier" [style.left]="barrierPosition + 'px'"></div>
     <div class="moving-word" [style.transform]="'translateX(' + wordPosition + 'px)'">
         <span *ngFor="let letter of currentWordArray; let i = index"
-            [style.color]="isLetterGuessed(i) ? '#4CAF50' : 'purple'">{{ letter }}</span>
+            [style.color]="isLetterGuessed(i) ? '#1ac720' : 'black'">{{ letter }}</span>
     </div>
 </div>
