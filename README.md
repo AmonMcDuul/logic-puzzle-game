@@ -42,6 +42,12 @@ To deploy:
 
 In angular.json change outputPath to docs:
 
-npm run build -- --configuration production --base-href "https://amonmcduul.github.io/space-trader/"
+npm run build -- --configuration production --base-href "https://amonmcduul.github.io/logic-puzzle-game/"
 
 npx angular-cli-ghpages --dir=docs/browser
+
+##
+
+Memory
+Frozen spel
+Gewoon typen
