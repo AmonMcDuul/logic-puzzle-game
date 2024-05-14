@@ -1,6 +1,7 @@
 <div class="game-container">
-    <div class="score">Score: {{ score }}</div>
     <div class="highscore">Hoogste score: {{ highscore }}</div>
+    <div class="score">Score: {{ score }}</div>
+    <div class="level">Level: {{ level }}</div>
     <div class="barrier" [style.left]="barrierPosition + 'px'"></div>
     <div class="moving-word" [style.transform]="'translateX(' + wordPosition + 'px)'">
         <span *ngFor="let letter of currentWordArray; let i = index"

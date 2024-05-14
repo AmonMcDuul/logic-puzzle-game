@@ -18,6 +18,8 @@ export class TypingGameComponent {
   score: number = 0;
   highscore: number = 0;
   currentLetterIndex: number = 0;
+  speed: number = 1;
+  level: number = 1;
 
   constructor(private wordsService: WordsService) {}
 
@@ -40,6 +42,10 @@ export class TypingGameComponent {
       this.currentLetterIndex++;
       if (this.currentLetterIndex >= this.currentWord.length) {
         this.score++;
+        if(this.score % 5 == 0){
+          this.speed += 1.5;
+          this.level++;
+        }
         if(this.score > this.highscore){
           this.highscore = this.score;
         }
@@ -49,10 +55,12 @@ export class TypingGameComponent {
   }
 
   moveWord(): void {
-    this.wordPosition -= 2; 
+    this.wordPosition -= this.speed; 
     if (this.wordPosition <= this.barrierPosition) {
       this.score = 0;
       this.currentLetterIndex = 0;
+      this.speed = 1;
+      this.level = 1;
       this.newGame();
     }
   }
