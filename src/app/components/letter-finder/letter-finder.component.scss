@@ -1,29 +1,62 @@
-.game-container {
+.main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: rgb(0, 0, 0);
 }
 
+.game-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  width: 50%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.setting-button {
+  font-size: 18px;
+  background-color: #f0f0f0; 
+  border: none;
+  margin: 5px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.setting-button:hover {
+  background-color: #FF4081;
+}
+
+.setting-button.selected {
+  background-color: #00fff2; 
+}
+
 .grid {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(10, 1fr); // Adjust the number of columns as needed
+    grid-template-columns: repeat(10, 1fr);
   }
   
   .cell {
-    width: 50px; // Adjust width of cell as needed
-    height: 50px; // Adjust height of cell as needed
-    border: 1px solid black; // Add border to cell
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(51, 97, 82);
-    background-color:gold;
+    // background-color:gold;
+    background-color:#00fff2;
   }
   
 .cell:hover {
-    background-color: #81D4FA; /* Highlight cell on hover */
+    background-color: #81D4FA;
   }
 
   .score {

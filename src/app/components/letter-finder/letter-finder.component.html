@@ -1,9 +1,23 @@
-<div class="game-container">
+<div class="main-container">
     <div class="score">Score: {{ score }}</div>
-    <div class="grid">
-        <div *ngFor="let row of grid; let i = index" class="row">
-            <div *ngFor="let symbol of row; let j = index" class="cell" (click)="selectSymbol(i, j)">
-                {{ symbol }}
+    <div class="game-container">
+        <div class="buttons">
+            <button class="setting-button" (click)=" selectSetting('??')"
+                [ngClass]="{'selected': ('??' == selectedSetting)}">
+                ??
+            </button>
+            @for(setting of settings; track setting){
+            <button class=" setting-button" (click)=" selectSetting(setting)"
+                [ngClass]="{'selected': (setting == selectedSetting)}">
+                {{ setting }}
+            </button>
+            }
+        </div>
+        <div class="grid">
+            <div *ngFor="let row of grid; let i = index" class="row">
+                <div *ngFor="let symbol of row; let j = index" class="cell" (click)="selectSymbol(i, j)">
+                    {{ symbol }}
+                </div>
             </div>
         </div>
     </div>
