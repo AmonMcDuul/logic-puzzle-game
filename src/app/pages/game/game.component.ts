@@ -6,13 +6,15 @@ import { TypingGameComponent } from "../../components/typing-game/typing-game.co
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { LearnClockComponent } from "../../components/learn-clock/learn-clock.component";
 import { LetterFinderComponent } from "../../components/letter-finder/letter-finder.component";
+import { MemoryComponent } from "../../components/memory/memory.component";
+import { SpaceInvadersComponent } from "../../components/space-invaders/space-invaders.component";
 
 @Component({
     selector: 'app-game',
     standalone: true,
     templateUrl: './game.component.html',
     styleUrl: './game.component.scss',
-    imports: [CommonModule, SimpleMathComponent, TimerComponent, TypingGameComponent, LearnClockComponent, LetterFinderComponent, RouterModule]
+    imports: [CommonModule, SimpleMathComponent, TimerComponent, TypingGameComponent, LearnClockComponent, LetterFinderComponent, RouterModule, MemoryComponent, SpaceInvadersComponent]
 })
 export class GameComponent {
     gameType: string = "";;

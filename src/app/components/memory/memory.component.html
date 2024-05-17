@@ -1,0 +1,18 @@
+<div class="main-container">
+    <div class="memory-grid" [ngClass]="'grid-' + selectedGridSize">
+        <div *ngFor="let card of cards; let i = index" class="card" [class.flipped]="card.flipped"
+            (click)="flipCard(i)">
+            <div class="card-inner">
+                <div class="card-front">?</div>
+                <div class="card-back">{{ card.symbol }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="settings-container">
+        <div class="grid-buttons">
+            <button class="grid-button" *ngFor="let size of gridSizeOptions" (click)="selectGridSize(size)">
+                {{ size }}
+            </button>
+        </div>
+    </div>
+</div>

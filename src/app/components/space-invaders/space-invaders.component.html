@@ -1,0 +1,13 @@
+<div class="game-container">
+    <div class="player" [style.left.px]="player.x" [style.top.px]="player.y"></div>
+    <div class="enemies">
+        <div *ngFor="let enemy of enemies" class="enemy" [style.left.px]="enemy.x" [style.top.px]="enemy.y"></div>
+    </div>
+    <div class="projectiles">
+        <div *ngFor="let projectile of projectiles" class="projectile" [style.left.px]="projectile.x"
+            [style.top.px]="projectile.y"></div>
+    </div>
+    <div *ngIf="gameOver">Game Over!</div>
+    <div class="score">Score: {{score}}</div>
+    <button class="shoot-button" (click)="shoot()">shoot</button>
+</div>
