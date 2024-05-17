@@ -1,0 +1,130 @@
+.clock-dial {
+    width: 350px;
+    height: 350px;
+    border: 14px solid #5c1869;
+    background-color: rgba(225, 34, 250, 0.575);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 3.5px 3.5px 7px rgb(219, 86, 86);
+  }
+  
+  .point {
+    width: 14px;
+    height: 14px;
+    background-color: #5c1869;
+    border-radius: 50%;
+    position: absolute;
+    top: 171px;
+    left: 171px;
+  }
+  
+  .hour {
+    font-size: 21px;
+    font-weight: bold;
+    color: #47000d;
+    position: absolute;
+  }
+  
+  .hour-1 {
+    top: 28px;
+    right: 91px;
+  }
+  .hour-2 {
+    top: 87.5px;
+    right: 31.5px;
+  }
+  .hour-3 {
+    top: 164.5px;
+    right: 7px;
+  }
+  .hour-4 {
+    top: 241.5px;
+    right: 31.5px;
+  }
+  .hour-5 {
+    top: 301px;
+    right: 91px;
+  }
+  .hour-6 {
+    bottom: 7px;
+    left: 171px;
+  }
+  .hour-7 {
+    top: 301px;
+    left: 91px;
+  }
+  .hour-8 {
+    top: 241.5px;
+    left: 31.5px;
+  }
+  .hour-9 {
+    top: 164.5px;
+    left: 7px;
+  }
+  .hour-10 {
+    top: 87.5px;
+    left: 31.5px;
+  }
+  .hour-11 {
+    top: 28px;
+    left: 91px;
+  }
+  .hour-12 {
+    top: 7px;
+    left: 164.5px;
+  }
+  
+  .brand {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5c186963;
+    position: absolute;
+    top: 63px;
+    left: 42.5%;
+  }
+  
+  .minute-hand-wrapper {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    border-radius: 50%;
+  }
+  
+  .minute-hand {
+    position: relative;
+  }
+  
+  .minute-hand .hand {
+    width: 4.2px;
+    height: 140px;
+    background-color: #0011ff;
+    border: 0.7px solid black;
+    position: absolute;
+    left: 139px;
+  }
+  
+  .hour-hand-wrapper {
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    border-radius: 50%;
+  }
+  
+  .hour-hand {
+    position: relative;
+  }
+  
+  .hour-hand .hand {
+    width: 4.2px;
+    height: 105px;
+    background-color: #ff0000;
+    border: 0.7px solid black;
+    position: absolute;
+    left: 104px;
+  }
+  

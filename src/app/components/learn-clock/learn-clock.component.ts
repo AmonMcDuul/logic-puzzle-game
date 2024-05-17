@@ -1,52 +1,88 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ClockComponent } from "./clock/clock.component";
 
 @Component({
   selector: 'app-learn-clock',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './learn-clock.component.html',
-  styleUrl: './learn-clock.component.scss'
+  styleUrls: ['./learn-clock.component.scss'],
+  imports: [CommonModule, ClockComponent]
 })
 export class LearnClockComponent {
   timeOptions: string[] = ['full', 'half', 'quarterBefore', 'quarterAfter'];
   selectedTimeOption: string = 'full';
-  currentTime: string = "";
-  hours: number = 0;
-  minutes: number = 0;
+  randomMinute: number = 0;
+  randomHour: number = 0;
+  minute: number = 0;
+  hour: number = 0;
+  hours: Array<number> = [1,2,3,4,5,6,7,8,9,10,11,12];
+  minutes: Array<number> = [0,15,30,45];
+  score: number = 0;
+  options: Array<{hour: number, minute: number}> = [];
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.generateRandomTime();
-    setInterval(() => {
-      this.updateClock();
-    }, 1000);
+  ngOnInit() {
+    this.resetClock();
   }
 
-  generateRandomTime(): void {
-    this.hours = Math.floor(Math.random() * 12) + 1;
-    this.minutes = Math.floor(Math.random() * 60);
-    this.updateClock();
+  resetClock() {
+    this.randomHour = Math.floor(Math.random() * this.hours.length) + 1;
+    this.randomMinute = this.minutes[Math.floor(Math.random() * this.minutes.length)];
+    this.hour = (this.randomHour % 12) * 30 + (this.randomMinute / 2);
+    this.minute = this.randomMinute * 6;
+    this.generateOptions();
   }
 
-  updateClock(): void {
-    const now = new Date();
-    this.hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-    this.minutes = now.getMinutes();
-    this.currentTime = this.getTimeDescription(this.hours, this.minutes);
+  generateOptions() {
+    this.options = [];
+    const correctOption = { hour: this.randomHour, minute: this.randomMinute };
+    this.options.push(correctOption);
+
+    while (this.options.length < 4) {
+      const hour = Math.floor(Math.random() * this.hours.length) + 1;
+      const minute = this.minutes[Math.floor(Math.random() * this.minutes.length)];
+      if (!this.options.some(option => option.hour === hour && option.minute === minute)) {
+        this.options.push({ hour, minute });
+      }
+    }
+
+    this.options = this.shuffleArray(this.options);
   }
 
-  getTimeDescription(hours: number, minutes: number): string {
-    let timeDescription = '';
-    const minuteText = minutes === 0 ? '' : minutes === 30 ? 'half' : minutes < 30 ? 'quarter before' : 'quarter after';
-    const hourText = hours;
-    timeDescription = `${hourText} ${minuteText}`;
-    return timeDescription;
+  shuffleArray(array: Array<any>) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
-  changeTimeOption(option: string): void {
-    this.selectedTimeOption = option;
-    this.generateRandomTime();
+  checkAnswer(option: { hour: number, minute: number }) {
+    if (option.hour === this.randomHour && option.minute === this.randomMinute) {
+      this.score++;
+      this.resetClock();
+    }
+  }
+
+  formatTime(number: number): string {
+    return number < 10 ? `0${number}` : `${number}`;
+  }
+
+  formatTimeInDutch(hour: number, minute: number): string {
+    if (minute === 0) {
+      return `${hour} uur`;
+    }
+    if (minute === 15) {
+      return `kwart over ${hour}`;
+    }
+    if (minute === 30) {
+      return `half ${hour === 12 ? 1 : hour + 1}`;
+    }
+    if (minute === 45) {
+      return `kwart voor ${hour === 12 ? 1 : hour + 1}`;
+    }
+    return '';
   }
 }

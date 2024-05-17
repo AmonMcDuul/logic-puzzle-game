@@ -1,13 +1,18 @@
-<div class="clock">
-    <div class="hour-hand" [style.transform]="'rotate(' + (hours * 30 + minutes / 2) + 'deg)'"></div>
-    <div class="minute-hand" [style.transform]="'rotate(' + (minutes * 6) + 'deg)'"></div>
+<div class="main-container">
+    <div class="score">Score: {{ score }}</div>
+    <div class="clock-container">
+        <app-clock [hour]="hour" [minute]="minute"></app-clock>
+    </div>
+    <div class="digital-clock">
+        <p>{{ formatTime(randomHour) }}:{{ formatTime(randomMinute) }}</p>
+    </div>
+    <div class="options-container">
+        <button *ngFor="let option of options" (click)="checkAnswer(option)">
+            {{ formatTimeInDutch(option.hour,
+            option.minute) }}
+        </button>
+    </div>
+    <div class="settings-container">
+        <button class="settings" (click)="resetClock()">Reset</button>
+    </div>
 </div>
-
-<div class="time-options">
-    <button *ngFor="let option of timeOptions" [ngClass]="{'selected': option === selectedTimeOption}"
-        (click)="changeTimeOption(option)">
-        {{ option }}
-    </button>
-</div>
-
-<div class="current-time">{{ currentTime }}</div>
