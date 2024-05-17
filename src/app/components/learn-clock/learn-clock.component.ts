@@ -10,8 +10,6 @@ import { ClockComponent } from "./clock/clock.component";
   imports: [CommonModule, ClockComponent]
 })
 export class LearnClockComponent {
-  timeOptions: string[] = ['full', 'half', 'quarterBefore', 'quarterAfter'];
-  selectedTimeOption: string = 'full';
   randomMinute: number = 0;
   randomHour: number = 0;
   minute: number = 0;
